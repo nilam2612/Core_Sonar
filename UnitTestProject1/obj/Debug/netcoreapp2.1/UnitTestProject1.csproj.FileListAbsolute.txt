@@ -1,0 +1,17 @@
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.deps.json
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.runtimeconfig.json
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.runtimeconfig.dev.json
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.dll
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\UnitTestProject1.pdb
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.csproj.CoreCompileInputs.cache
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.AssemblyInfoInputs.cache
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.AssemblyInfo.cs
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.dll
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.pdb
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.csprojAssemblyReference.cache
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\Core_Sonar.dll
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\bin\Debug\netcoreapp2.1\Core_Sonar.pdb
+E:\Nilam\Project\Core_Sonar\UnitTestProject1\obj\Debug\netcoreapp2.1\UnitTestProject1.csproj.CopyComplete

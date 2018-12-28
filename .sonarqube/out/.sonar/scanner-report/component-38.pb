@@ -1,0 +1,1 @@
+&tools/Cake/Cake.NuGet.xml 2xmlXshrtools/Cake/Cake.NuGet.xml

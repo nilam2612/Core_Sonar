@@ -1,0 +1,1 @@
+3tools/Addins/Cake.Coverlet.2.1.2/lib/netstandard2.0 :r3tools/Addins/Cake.Coverlet.2.1.2/lib/netstandard2.0

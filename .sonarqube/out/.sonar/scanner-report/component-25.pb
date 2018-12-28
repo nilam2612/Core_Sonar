@@ -1,0 +1,1 @@
+Etools/Addins/Cake.Coverlet.2.1.2/lib/netstandard2.0/Cake.Coverlet.xml 2xmlX„hrEtools/Addins/Cake.Coverlet.2.1.2/lib/netstandard2.0/Cake.Coverlet.xml

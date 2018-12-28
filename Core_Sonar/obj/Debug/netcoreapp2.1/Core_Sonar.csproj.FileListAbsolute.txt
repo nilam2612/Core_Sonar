@@ -1,0 +1,17 @@
+E:\Nilam\Project\Core_Sonar\Core_Sonar\obj\Debug\netcoreapp2.1\Core_Sonar.csproj.CoreCompileInputs.cache
+E:\Nilam\Project\Core_Sonar\Core_Sonar\obj\Debug\netcoreapp2.1\Core_Sonar.RazorAssemblyInfo.cache
+E:\Nilam\Project\Core_Sonar\Core_Sonar\obj\Debug\netcoreapp2.1\Core_Sonar.RazorAssemblyInfo.cs
+E:\Nilam\Project\Core_Sonar\Core_Sonar\obj\Debug\netcoreapp2.1\Core_Sonar.AssemblyInfoInputs.cache
+E:\Nilam\Project\Core_Sonar\Core_Sonar\obj\Debug\netcoreapp2.1\Core_Sonar.AssemblyInfo.cs
+E:\Nilam\Project\Core_Sonar\Core_Sonar\bin\Debug\netcoreapp2.1\Core_Sonar.deps.json
+E:\Nilam\Project\Core_Sonar\Core_Sonar\bin\Debug\netcoreapp2.1\Core_Sonar.runtimeconfig.json
+E:\Nilam\Project\Core_Sonar\Core_Sonar\bin\Debug\netcoreapp2.1\Core_Sonar.runtimeconfig.dev.json
+E:\Nilam\Project\Core_Sonar\Core_Sonar\bin\Debug\netcoreapp2.1\Core_Sonar.dll
+E:\Nilam\Project\Core_Sonar\Core_Sonar\bin\Debug\netcoreapp2.1\Core_Sonar.pdb
+E:\Nilam\Project\Core_Sonar\Core_Sonar\obj\Debug\netcoreapp2.1\Core_Sonar.RazorTargetAssemblyInfo.cache
+E:\Nilam\Project\Core_Sonar\Core_Sonar\obj\Debug\netcoreapp2.1\Core_Sonar.dll
+E:\Nilam\Project\Core_Sonar\Core_Sonar\obj\Debug\netcoreapp2.1\Core_Sonar.pdb
+E:\Nilam\Project\Core_Sonar\Core_Sonar\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+E:\Nilam\Project\Core_Sonar\Core_Sonar\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+E:\Nilam\Project\Core_Sonar\Core_Sonar\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+E:\Nilam\Project\Core_Sonar\Core_Sonar\obj\Debug\netcoreapp2.1\Core_Sonar.csprojAssemblyReference.cache
