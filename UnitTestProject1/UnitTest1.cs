@@ -8,8 +8,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            Core_Sonar.Controllers.ValuesController obj = new Core_Sonar.Controllers.ValuesController();
-            Assert.AreEqual(obj.Get(), "value1", "value2");
+          
         }
 
         [TestMethod]
