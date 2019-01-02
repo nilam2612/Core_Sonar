@@ -6,7 +6,7 @@
 
 var target = Argument("target", "Sonar");
 var configuration = Argument("configuration", "Release");
-
+var coverletDirectory = Directory("./coverage-results");
 var publishorderApi = Directory("./publishOrderApi/");
 var solutionFile = "Core_Sonar.sln";  
 var websolutionFile = "./Core_Sonar/Core_Sonar.csproj";
@@ -59,10 +59,39 @@ var websolutionFile = "./Core_Sonar/Core_Sonar.csproj";
         Password = "admin"
      });
   });
+  
+   // Look under a 'Tests' folder and run dotnet test against all of those projects.
+// Then drop the XML test results file in the Artifacts folder at the root.
+Task("Test")
+    .Does(() =>
+    {
+        var project = "./UnitTestProject1/UnitTestProject1.csproj";
+    
+            Information("Testing project " + project);
+            DotNetCoreTest(
+                project.ToString(),
+                new DotNetCoreTestSettings()
+                {
+                    Configuration = configuration,
+                    NoBuild = true,
+                    ArgumentCustomization = args => args.Append("--no-restore"),
+                },
+                new CoverletSettings() 
+                {
+                    CollectCoverage = true,
+                    CoverletOutputFormat = CoverletOutputFormat.opencover,
+                    CoverletOutputDirectory = coverletDirectory,
+                    CoverletOutputName = $"results-{DateTime.UtcNow:dd-MM-yyyy-HH-mm-ss-FFF}"
+                }
+                );
+     
+    });
+  
 
 	Task("Sonar")
    .IsDependentOn("SonarBegin")
     .IsDependentOn("Build")
-  .IsDependentOn("SonarEnd");
+  .IsDependentOn("SonarEnd")
+   .IsDependentOn("Test");
 	
 RunTarget(target);
