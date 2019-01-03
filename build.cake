@@ -23,14 +23,10 @@ Task("Pack")
                                     Summary                 = "Excellent summary of what the Cake (C# Make) build tool does.",
                                     ProjectUrl              = new Uri("https://github.com/nilam2612/Core_Sonar"),                                    
                                     BasePath                =publishorderApi,
-                                    OutputDirectory         = "./nuget"
+                                    OutputDirectory         =  Directory("./nuget/")
                                 };
 
-    CopyFiles( "./nuget/NuSpec/*.nuspec", "./nuget" );
-    foreach( var nuspec in GetFiles( "./nuget/NuSpec/*.nuspec" ) )
-                    {
-                        NuGetPack( nuspec, nuGetPackSettings );
-                    }     
+    NuGetPack(nuGetPackSettings);
   });
 
 Task("OctoPush")
