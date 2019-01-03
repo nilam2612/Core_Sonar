@@ -127,7 +127,7 @@ Task("Pack")
 Task("OctoPush")
   .IsDependentOn("Pack")
   .Does(() => {
-    OctoPush("http://your.octopusdeploy.server", "YOUR_API_KEY", new FilePath("./nuget/Core_Sonar.0.0.0.1.nupkg"),
+    OctoPush(" https://coresonar.octopus.app", "", new FilePath("./nuget/Core_Sonar.0.0.0.1.nupkg"),
       new OctopusPushSettings {
         ReplaceExisting = true
       });
@@ -137,8 +137,8 @@ Task("OctoRelease")
   .IsDependentOn("OctoPush")
   .Does(() => {
     OctoCreateRelease("Core_Sonar", new CreateReleaseSettings {
-        Server = "http://your.octopusdeploy.server",
-        ApiKey = "YOUR_API_KEY",
+        Server = "https://coresonar.octopus.app",
+        ApiKey = "",
         ReleaseNumber = "0.0.0.1"
       });
   });
