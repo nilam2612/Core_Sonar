@@ -80,8 +80,8 @@ Task("Test")
                 {
 			  CollectCoverage = true,
 			CoverletOutputFormat = CoverletOutputFormat.opencover	,
-			CoverletOutputDirectory = Directory(@".\"),
-        CoverletOutputName = $"results-{DateTime.UtcNow:dd-MM-yyyy-HH-mm-ss-FFF}"
+			CoverletOutputDirectory = publishorderApi,
+        CoverletOutputName = $"results-{DateTime.UtcNow:dd-MM-yyyy-HH-mm}"
        
                 }
                 );
