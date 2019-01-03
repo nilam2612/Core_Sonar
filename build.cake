@@ -29,6 +29,7 @@ Task("Pack")
      CopyFiles( "./nuget/NuSpec/*.nuspec", "./nuget" );
     foreach( var nuspec in GetFiles( "./nuget/NuSpec/*.nuspec" ) )
                     {
+	    	Information("Pack Project");
                         NuGetPack( nuspec, nuGetPackSettings );
                     }     
   });
