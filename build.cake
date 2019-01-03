@@ -4,7 +4,7 @@
 #addin nuget:?package=Cake.Coverlet
 
 
-var target = Argument("target", "SonarCov");
+var target = Argument("target", "Build");
 var configuration = Argument("configuration", "Release");
 var coverletDirectory = Directory("./coverage-results");
 var publishorderApi = Directory("./publishOrderApi/");
@@ -101,6 +101,47 @@ Task("TestOLD")
      
     });
   
+
+
+Task("Pack")
+  .IsDependentOn("Build")
+  .Does(() => {
+    var nuGetPackSettings   = new NuGetPackSettings {
+                                    Id                      = "Core_Sonar",
+                                    Version                 = "0.0.0.1",
+                                    Title                   = "Core Demo",
+                                    Authors                 = new[] {"Nilam Rajvanshi"},
+                                    Description             = "Demo of creating cake.build scripts.",
+                                    Summary                 = "Excellent summary of what the Cake (C# Make) build tool does.",
+                                    ProjectUrl              = new Uri("https://github.com/nilam2612/Core_Sonar"),
+                                    Files                   = new [] {
+                                                                        new NuSpecContent {Source = "c.exe", Target = "bin"},
+                                                                      },
+                                    BasePath                = "./Core_Sonar/Core_Sonar/bin/Debug",
+                                    OutputDirectory         = "./nuget"
+                                };
+
+    NuGetPack(nuGetPackSettings);
+  });
+
+Task("OctoPush")
+  .IsDependentOn("Pack")
+  .Does(() => {
+    OctoPush("http://your.octopusdeploy.server", "YOUR_API_KEY", new FilePath("./nuget/Core_Sonar.0.0.0.1.nupkg"),
+      new OctopusPushSettings {
+        ReplaceExisting = true
+      });
+  });
+
+Task("OctoRelease")
+  .IsDependentOn("OctoPush")
+  .Does(() => {
+    OctoCreateRelease("Core_Sonar", new CreateReleaseSettings {
+        Server = "http://your.octopusdeploy.server",
+        ApiKey = "YOUR_API_KEY",
+        ReleaseNumber = "0.0.0.1"
+      });
+  });
 
 	Task("SonarCov")
    .IsDependentOn("SonarBegin")
