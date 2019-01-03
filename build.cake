@@ -10,7 +10,7 @@ var coverletDirectory = Directory("./coverage-results");
 var publishorderApi = Directory("./publishOrderApi/");
 var solutionFile = "Core_Sonar.sln";  
 var websolutionFile = "./Core_Sonar/Core_Sonar.csproj";
-var coverageResultsFileName = "coverage.xml";
+var coverageResultsFileName = "coveragetest.xml";
 
 
 // Build using the build configuration specified as an argument.
@@ -67,8 +67,7 @@ Task("Test1")
         var settings = new DotNetCoreTestSettings
         {
             ArgumentCustomization = args => args.Append("/p:CollectCoverage=true")
-                                                .Append("/p:CoverletOutputFormat=opencover")
-		    				.Append("/p:CoverletOutputDirectory=./"+ publishorderApi)
+                                                .Append("/p:CoverletOutputFormat=opencover")		    				
                                                 .Append("/p:CoverletOutput=./" + coverageResultsFileName)
         };
         DotNetCoreTest(testProject, settings);
