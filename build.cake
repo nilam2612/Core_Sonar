@@ -14,7 +14,7 @@ var coverageResultsFileName = "coveragetest.xml";
 
 Task("Pack") 
   .Does(() => {
-    var nuGetPackSettings   = new NuGetPackSettings {
+     var nuGetPackSettings   = new NuGetPackSettings {
                                     Id                      = "Core_Sonar",
                                     Version                 = "0.0.0.1",
                                     Title                   = "Core Demo",
@@ -22,17 +22,14 @@ Task("Pack")
                                     Description             = "Demo of creating cake.build scripts.",
                                     Summary                 = "Excellent summary of what the Cake (C# Make) build tool does.",
                                     ProjectUrl              = new Uri("https://github.com/nilam2612/Core_Sonar"),                                    
-                                    BasePath                =publishorderApi,
-                                    OutputDirectory         =  Directory("./nuget/")
+                                    Files                   = new [] {
+                                                                        new NuSpecContent {Source = "Core_Sonar.dll", Target = "bin"},
+                                                                      },
+                                    BasePath                = "./Core_Sonar/bin/Debug/netcoreapp2.1",
+                                    OutputDirectory         = "./nuget"
                                 };
 
-     CopyFiles( "./nuget/NuSpec/*.nuspec", "./nuget" );
-	  Information("Pack Project");
-    foreach( var nuspec in GetFiles( "./nuget/NuSpec/*.nuspec" ) )
-                    {
-	    	Information("Pack Project");
-                        NuGetPack( nuspec, nuGetPackSettings );
-                    }     
+    NuGetPack(nuGetPackSettings);
   });
 
 Task("OctoPush")
