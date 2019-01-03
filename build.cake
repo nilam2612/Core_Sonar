@@ -21,11 +21,8 @@ Task("Pack")
                                     Authors                 = new[] {"Nilam Rajvanshi"},
                                     Description             = "Demo of creating cake.build scripts.",
                                     Summary                 = "Excellent summary of what the Cake (C# Make) build tool does.",
-                                    ProjectUrl              = new Uri("https://github.com/nilam2612/Core_Sonar"),
-                                    Files                   = new [] {
-                                                                        new NuSpecContent {Source = "Core_Sonar.dll", Target = "bin"},
-                                                                      },
-                                    BasePath                = "./Core_Sonar/bin/Debug",
+                                    ProjectUrl              = new Uri("https://github.com/nilam2612/Core_Sonar"),                                    
+                                    BasePath                =publishorderApi,
                                     OutputDirectory         = "./nuget"
                                 };
 
