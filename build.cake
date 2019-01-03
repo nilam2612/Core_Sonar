@@ -26,7 +26,11 @@ Task("Pack")
                                     OutputDirectory         = "./nuget"
                                 };
 
-    NuGetPack(nuGetPackSettings);
+    CopyFiles( "./nuget/NuSpec/*.nuspec", "./nuget" );
+    foreach( var nuspec in GetFiles( "./nuget/NuSpec/*.nuspec" ) )
+                    {
+                        NuGetPack( nuspec, nuGetPackSettings );
+                    }     
   });
 
 Task("OctoPush")
