@@ -4,7 +4,7 @@
 #addin nuget:?package=Cake.Coverlet
 
 
-var target = Argument("target", "Test");
+var target = Argument("target", "Coverlet");
 var configuration = Argument("configuration", "Release");
 var coverletDirectory = Directory("./coverage-results");
 var publishorderApi = Directory("./publishOrderApi/");
@@ -94,4 +94,8 @@ Task("Test")
   .IsDependentOn("SonarEnd")
    .IsDependentOn("Test");
 	
+Task("Coverlet")  
+    .IsDependentOn("Build")
+   .IsDependentOn("Test");
+
 RunTarget(target);
