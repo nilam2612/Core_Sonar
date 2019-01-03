@@ -78,6 +78,7 @@ Task("Test")
                 },
                 new CoverletSettings() 
                 {
+			  CollectCoverage = true
                 }
                 );
      
