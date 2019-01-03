@@ -80,7 +80,7 @@ Task("Test")
                 {
 			  CollectCoverage = true,
 			CoverletOutputFormat = CoverletOutputFormat.opencover,
-			CoverletOutputDirectory = coverletDirectory,
+			CoverletOutputDirectory = publishorderApi,
 			CoverletOutputName = $"results"
                 }
                 );
