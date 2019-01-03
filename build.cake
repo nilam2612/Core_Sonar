@@ -12,6 +12,44 @@ var solutionFile = "Core_Sonar.sln";
 var websolutionFile = "./Core_Sonar/Core_Sonar.csproj";
 var coverageResultsFileName = "coveragetest.xml";
 
+Task("Pack") 
+  .Does(() => {
+    var nuGetPackSettings   = new NuGetPackSettings {
+                                    Id                      = "Core_Sonar",
+                                    Version                 = "0.0.0.1",
+                                    Title                   = "Core Demo",
+                                    Authors                 = new[] {"Nilam Rajvanshi"},
+                                    Description             = "Demo of creating cake.build scripts.",
+                                    Summary                 = "Excellent summary of what the Cake (C# Make) build tool does.",
+                                    ProjectUrl              = new Uri("https://github.com/nilam2612/Core_Sonar"),
+                                    Files                   = new [] {
+                                                                        new NuSpecContent {Source = "c.exe", Target = "bin"},
+                                                                      },
+                                    BasePath                = "./Core_Sonar/Core_Sonar/bin/Debug",
+                                    OutputDirectory         = "./nuget"
+                                };
+
+    NuGetPack(nuGetPackSettings);
+  });
+
+Task("OctoPush")
+  .IsDependentOn("Pack")
+  .Does(() => {
+    OctoPush(" https://coresonar.octopus.app", "", new FilePath("./nuget/Core_Sonar.0.0.0.1.nupkg"),
+      new OctopusPushSettings {
+        ReplaceExisting = true
+      });
+  });
+
+Task("OctoRelease")
+  .IsDependentOn("OctoPush")
+  .Does(() => {
+    OctoCreateRelease("Core_Sonar", new CreateReleaseSettings {
+        Server = "https://coresonar.octopus.app",
+        ApiKey = "",
+        ReleaseNumber = "0.0.0.1"
+      });
+  });
 
 // Build using the build configuration specified as an argument.
  Task("Build")
@@ -103,45 +141,7 @@ Task("TestOLD")
   
 
 
-Task("Pack")
-  .IsDependentOn("Build")
-  .Does(() => {
-    var nuGetPackSettings   = new NuGetPackSettings {
-                                    Id                      = "Core_Sonar",
-                                    Version                 = "0.0.0.1",
-                                    Title                   = "Core Demo",
-                                    Authors                 = new[] {"Nilam Rajvanshi"},
-                                    Description             = "Demo of creating cake.build scripts.",
-                                    Summary                 = "Excellent summary of what the Cake (C# Make) build tool does.",
-                                    ProjectUrl              = new Uri("https://github.com/nilam2612/Core_Sonar"),
-                                    Files                   = new [] {
-                                                                        new NuSpecContent {Source = "c.exe", Target = "bin"},
-                                                                      },
-                                    BasePath                = "./Core_Sonar/Core_Sonar/bin/Debug",
-                                    OutputDirectory         = "./nuget"
-                                };
 
-    NuGetPack(nuGetPackSettings);
-  });
-
-Task("OctoPush")
-  .IsDependentOn("Pack")
-  .Does(() => {
-    OctoPush(" https://coresonar.octopus.app", "", new FilePath("./nuget/Core_Sonar.0.0.0.1.nupkg"),
-      new OctopusPushSettings {
-        ReplaceExisting = true
-      });
-  });
-
-Task("OctoRelease")
-  .IsDependentOn("OctoPush")
-  .Does(() => {
-    OctoCreateRelease("Core_Sonar", new CreateReleaseSettings {
-        Server = "https://coresonar.octopus.app",
-        ApiKey = "",
-        ReleaseNumber = "0.0.0.1"
-      });
-  });
 
 	Task("SonarCov")
    .IsDependentOn("SonarBegin")
