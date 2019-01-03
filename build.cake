@@ -74,7 +74,7 @@ Task("Test")
                 {
                     Configuration = configuration,
                     NoBuild = true,
-                    ArgumentCustomization = args => args.Append("--no-restore"),
+                    ArgumentCustomization = args => args.Append("--no-restore")
                 },
                 new CoverletSettings() 
                 {
