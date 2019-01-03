@@ -73,7 +73,7 @@ Task("Test")
                 new DotNetCoreTestSettings()
                 {
                     Configuration = configuration,
-                    NoBuild = true,
+                
                     ArgumentCustomization = args => args.Append("--no-restore")
                 },
                 new CoverletSettings() 
@@ -81,7 +81,7 @@ Task("Test")
 			  CollectCoverage = true,
 			CoverletOutputFormat = CoverletOutputFormat.opencover,
 			  CoverletOutputDirectory = Directory(@".\coverage-results\"),
-        CoverletOutputName = $"results-{DateTime.UtcNow:dd-MM-yyyy-HH-mm-ss-FFF}"
+        CoverletOutputName = $"resultss"
                 }
                 );
      
