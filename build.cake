@@ -80,8 +80,8 @@ Task("Test")
                 {
 			  CollectCoverage = true,
 			CoverletOutputFormat = CoverletOutputFormat.opencover,
-			  CoverletOutputDirectory = Directory(@".\coverage-results\"),
-        CoverletOutputName = $"resultss"
+			  CoverletOutputDirectory = Directory(@".\coverage-results\")
+       
                 }
                 );
      
