@@ -4,7 +4,7 @@
 #addin nuget:?package=Cake.Coverlet
 
 
-var target = Argument("target", "Coverlet");
+var target = Argument("target", "SonarCov");
 var configuration = Argument("configuration", "Release");
 var coverletDirectory = Directory("./coverage-results");
 var publishorderApi = Directory("./publishOrderApi/");
@@ -61,7 +61,7 @@ var coverageResultsFileName = "coveragetest.xml";
   });
   
 
-Task("Test1")
+Task("Test")
     .Does(() => {
 	    var testProject = "./UnitTestProject1/UnitTestProject1.csproj";
         var settings = new DotNetCoreTestSettings
@@ -75,7 +75,7 @@ Task("Test1")
     });
    // Look under a 'Tests' folder and run dotnet test against all of those projects.
 // Then drop the XML test results file in the Artifacts folder at the root.
-Task("Test")
+Task("TestOLD")
     .Does(() =>
     {
         var project = "./UnitTestProject1/UnitTestProject1.csproj";
@@ -102,7 +102,7 @@ Task("Test")
     });
   
 
-	Task("Sonar")
+	Task("SonarCov")
    .IsDependentOn("SonarBegin")
     .IsDependentOn("Build")
   .IsDependentOn("SonarEnd")
@@ -110,6 +110,6 @@ Task("Test")
 	
 Task("Coverlet")  
     .IsDependentOn("Build")
-   .IsDependentOn("Test1");
+   .IsDependentOn("Test");
 
 RunTarget(target);
