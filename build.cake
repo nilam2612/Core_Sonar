@@ -63,6 +63,7 @@ var coverageResultsFileName = "coverage.xml";
 
 Task("Test1")
     .Does(() => {
+	    var testProject = "./UnitTestProject1/UnitTestProject1.csproj";
         var settings = new DotNetCoreTestSettings
         {
             ArgumentCustomization = args => args.Append("/p:CollectCoverage=true")
