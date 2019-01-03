@@ -4,7 +4,7 @@
 #addin nuget:?package=Cake.Coverlet
 
 
-var target = Argument("target", "Coverlet");
+var target = Argument("target", "Test");
 var configuration = Argument("configuration", "Release");
 var coverletDirectory = Directory("./coverage-results");
 var publishorderApi = Directory("./publishOrderApi/");
@@ -78,7 +78,8 @@ Task("Test")
                 },
                 new CoverletSettings() 
                 {
-			  CollectCoverage = true
+			  CollectCoverage = true,
+			CoverletOutputFormat = CoverletOutputFormat.opencover
                 }
                 );
      
