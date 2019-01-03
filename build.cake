@@ -27,6 +27,7 @@ Task("Pack")
                                 };
 
      CopyFiles( "./nuget/NuSpec/*.nuspec", "./nuget" );
+	  Information("Pack Project");
     foreach( var nuspec in GetFiles( "./nuget/NuSpec/*.nuspec" ) )
                     {
 	    	Information("Pack Project");
