@@ -23,7 +23,7 @@ Task("Pack")
                                     Summary                 = "Excellent summary of what the Cake (C# Make) build tool does.",
                                     ProjectUrl              = new Uri("https://github.com/nilam2612/Core_Sonar"),
                                     Files                   = new [] {
-                                                                        new NuSpecContent {Source = "c.exe", Target = "bin"},
+                                                                        new NuSpecContent {Source = "Core_Sonar.exe", Target = "bin"},
                                                                       },
                                     BasePath                = "./Core_Sonar/bin/Debug",
                                     OutputDirectory         = "./nuget"
