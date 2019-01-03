@@ -25,7 +25,7 @@ Task("Pack")
                                     Files                   = new [] {
                                                                         new NuSpecContent {Source = "c.exe", Target = "bin"},
                                                                       },
-                                    BasePath                = "./Core_Sonar/Core_Sonar/bin/Debug",
+                                    BasePath                = "./Core_Sonar/bin/Debug",
                                     OutputDirectory         = "./nuget"
                                 };
 
