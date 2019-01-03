@@ -79,7 +79,9 @@ Task("Test")
                 new CoverletSettings() 
                 {
 			  CollectCoverage = true,
-			CoverletOutputFormat = CoverletOutputFormat.opencover
+			CoverletOutputFormat = CoverletOutputFormat.opencover,
+			CoverletOutputDirectory = coverletDirectory,
+			CoverletOutputName = $"results-{DateTime.UtcNow:dd-MM-yyyy-HH-mm-ss-FFF}"
                 }
                 );
      
