@@ -4,7 +4,7 @@
 #addin nuget:?package=Cake.Coverlet
 
 
-var target = Argument("target", "Sonar");
+var target = Argument("target", "Test");
 var configuration = Argument("configuration", "Release");
 var coverletDirectory = Directory("./coverage-results");
 var publishorderApi = Directory("./publishOrderApi/");
