@@ -6,7 +6,7 @@
 
 var target = Argument("target", "Coverlet");
 var configuration = Argument("configuration", "Release");
-var coverletDirectory = Directory("./coverage-results");
+var coverletDirectory = Directory("./coverageresults");
 var publishorderApi = Directory("./publishOrderApi/");
 var solutionFile = "Core_Sonar.sln";  
 var websolutionFile = "./Core_Sonar/Core_Sonar.csproj";
