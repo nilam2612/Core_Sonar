@@ -79,8 +79,7 @@ Task("Test")
                 new CoverletSettings() 
                 {
 			  CollectCoverage = true,
-			CoverletOutputFormat = CoverletOutputFormat.opencover,
-			    CoverletOutputName = "results"
+			CoverletOutputFormat = CoverletOutputFormat.opencover		
        
                 }
                 );
