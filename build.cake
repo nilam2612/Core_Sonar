@@ -67,7 +67,7 @@ Task("Test")
     {
         var project = "./UnitTestProject1/UnitTestProject1.csproj";
     
-            Information("Testing project " + project);
+          
             DotNetCoreTest(
                 project.ToString(),
                 new DotNetCoreTestSettings()
