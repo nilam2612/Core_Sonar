@@ -68,7 +68,7 @@ Task("Test1")
         {
             ArgumentCustomization = args => args.Append("/p:CollectCoverage=true")
                                                 .Append("/p:CoverletOutputFormat=opencover")
-		    				.Append("/p:CoverletOutputDirectory=./"+ coverletDirectory)
+		    				.Append("/p:CoverletOutputDirectory=./"+ publishorderApi)
                                                 .Append("/p:CoverletOutput=./" + coverageResultsFileName)
         };
         DotNetCoreTest(testProject, settings);
