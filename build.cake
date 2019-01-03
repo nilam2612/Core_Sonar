@@ -65,7 +65,7 @@ var websolutionFile = "./Core_Sonar/Core_Sonar.csproj";
 Task("Test")
     .Does(() =>
     {
-        var project = ".\\UnitTestProject1/UnitTestProject1.csproj";
+        var project = "UnitTestProject1.csproj";
     
           
             DotNetCoreTest(
@@ -78,10 +78,6 @@ Task("Test")
                 },
                 new CoverletSettings() 
                 {
-                    CollectCoverage = true,
-                    CoverletOutputFormat = CoverletOutputFormat.opencover,
-                    CoverletOutputDirectory = publishorderApi,
-                    CoverletOutputName = $"results-{DateTime.UtcNow:dd-MM-yyyy-HH-mm-ss-FFF}"
                 }
                 );
      
